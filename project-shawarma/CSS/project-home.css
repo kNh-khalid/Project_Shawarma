@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+}
+h1{
+  width: 780px;
+  animation: wordAnim 2s ease 0s 1 normal forwards;
+  font-size: 60px;
+  color: white;
+}         
+h1 div{
+  font-size: 25px;
+
+}
+h1 a{
+    position: absolute;
+    right: 0;
+    top: 20%;
+}
+.button-class{
+  width: auto;
+  height: 25px;
+  padding: 5px 10px;
+  border-radius: 40px;
+  background-color: orange;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  transition: 0.3s;
+  text-align: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.button-class a{
+  color: white;
+  text-decoration: none;
+}
+.button-class:hover{
+    background-color: rgb(255, 221, 157);
+
+}
+#vidback{
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+  
+
+  @keyframes imgAnim {
+    0% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+  }
+  @keyframes wordAnim {
+    0% {
+      transform: scale(0.5);
+      transform-origin: 0% 50%;
+    }
+  
+    100% {
+      transform: scale(1);
+      transform-origin: 0% 50%;
+    }
+  }
+  @media (max-width: 768px) {
+    h1 {
+        margin-left: 30px;
+        font-size: 3rem;
+        width: 60%;
+    }
+   
+    h1 .img{
+      width: 30%;
+      position: absolute;
+      top: 60%;
+    }
+  }
+  @media (max-width: 670px) {
+    h1{
+      margin-top: 300px;
+      font-size: 3rem;
+        width: 60%;
+    }
+    h1 .img{
+      width: 30%;
+      position: absolute;
+      top: 90%;
+    }
+  }
+
+ 

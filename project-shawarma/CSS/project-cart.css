@@ -1,0 +1,221 @@
+body {
+    font-family: "Sour Gummy", serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: rgb(133, 18, 18);
+}
+#cart-section{
+    margin-top: 100px;
+    margin-left: 30px;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d5d8aa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+    width: 80%;
+    height: auto;
+}
+
+.cart-item img {
+    width: 15%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cart-details {
+    flex-grow: 1;
+}
+
+.cart-details p {
+    margin: 0;
+    color: #333;
+}
+
+.cart-item-quantity {
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.cart-item-remove {
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cart-item-remove:hover {
+    background-color: #ff4d4d;
+}
+
+.cart-summary {
+    
+    background-color: #d5d8aa;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    width: 60%;
+}
+
+.cart-summary p {
+    font-size: 18px;
+    color: rgb(133, 18, 18);
+}
+
+.checkout-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    border: none;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+}
+
+/*dark mode*/
+body.dark-mode {
+    background-color: #333;
+}
+
+@media (max-width:768px) {
+    .cart-item{
+        display: inline-block;
+        text-align: center;
+    }
+}
+@media (max-width:660px){
+    #cart-section{
+        margin-top: 300px;
+    }
+    .cart-item{
+        display: inline-block;
+        text-align: center;
+    }
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .modal.active {
+    display: block;
+  }
+  .modal-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .modal-body {
+    margin-bottom: 20px;
+  }
+  .modal-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+  }
+  .modal-footer button:hover {
+    background-color: #0056b3;
+  }
+  .payment-container {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .payment-container h2 {
+    margin-bottom: 10px;
+  }
+  
+  .payment-container p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .payment-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .payment-option input {
+    margin-right: 10px;
+    transform: scale(1.2);
+  }
+  
+  .payment-option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .payment-option .icon {
+    width: 50px;
+    height: 40px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .icon.cash {
+    background-image: url('/img/cash.png');
+  }
+  
+  .icon.bank-muamalat {
+    background-image: url('/img/muamalat.png');
+  }
+  
+  .icon.bank-islam {
+    background-image: url('/img/islam.png');
+  }
+  
+  .icon.tng-ewallet {
+    background-image: url('/img/TnG.png');
+  }
+  
