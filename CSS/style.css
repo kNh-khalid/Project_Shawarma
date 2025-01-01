@@ -1,0 +1,169 @@
+body {
+    background-image: linear-gradient(to top right, #fff8ed, #ffc973);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    transition: background-color 0.5s;
+    background-attachment: fixed;
+
+}
+body.dark-mode{
+  background-color: rgb(98, 66, 1);
+  background-image: linear-gradient(to top right,rgb(98, 66, 1),rgb(239, 180, 52));
+}
+.topnav{
+  background-color: #f6c062;
+  height: 70px;
+  overflow:hidden;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.topnav.dark-mode {
+    background-color: #966202; /* Dark mode background */
+    color: rgb(7, 6, 6); /* Dark mode text color */
+}
+.topnav:hover{
+  box-shadow: none;
+}
+.topnav a {
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 8px 25px; /* Add this line */
+}
+.topnav a.active{
+  background-color: #464842;
+  opacity: 0.8;
+  color: white;
+  margin: 0.5px;
+  display: inline-block; /* Add this line */
+  width: auto; /* Add this line */
+  padding: 10px 20px; /* Add this line */
+  text-align: center; /* Add this line */
+}
+/* From Uiverse.io by alexruix */ 
+/* The switch - the box around the slider */
+
+div .switch {
+  font-size: 17px;
+  display: inline-block;
+  width: 60px;
+  height:30px;
+  }
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  --background: #b5afc1;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+  background: #21095c;
+  transition: .5s;
+}
+input:checked + .slider {
+  background-color: #21095c;
+}
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+}
+
+
+ul{
+	margin: auto;
+	text-align: center;
+}
+ul div{
+    display: inline-block;
+    position: relative;
+    line-height: 29px;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+ul img{
+  width: 45px; height: 38px;
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+ul li{
+    display: inline-block;
+    position: relative;
+    line-height: 21px;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+ul li a{
+    display: block;
+    padding: 8px 3vw;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+}
+ul li a:hover{
+    color: #318351;
+    transform: translateY(1px);
+}
+.logo{
+  position: absolute;
+  right: 20px;
+  top: 10%;
+}
+
+
+@media (max-width: 660px) {
+  .topnav {
+    height:300px;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+  }
+  ul {
+
+    padding: 10px 0; 
+  }
+  ul div {
+    margin-bottom: 10px;
+  }
+  ul img{
+    margin-bottom: 20px;
+    position: relative;
+    top: 50%;
+  }
+  ul li {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  ul li a {
+    padding: 12px 0; 
+  }
+.logo {
+       display: none;
+}
+}

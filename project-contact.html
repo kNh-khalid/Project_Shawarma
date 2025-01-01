@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/project-contact.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" type="image" href="img/icon.png">
+
+
+    <style>
+        
+    </style>
+</head>
+<body>
+     
+        <div class="topnav" id="topnav">
+            <ul>
+                                           
+                <li><a href="project-home.html">Home</a></li>
+                <li><a href="project-menu.html">Menu</a></li>
+                <li><a href="project-cart.html">Cart</a></li>
+                <li><a href="project-login.html">Login</a></li>
+                <li><a class="active" href="project-contact.html">Contact us</a></li>
+                <li>
+                    <a href="project-profile.html"><img src="img/profile.png" alt=""></a>   
+                </li>
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider"></span>
+                    </label> 
+                </div>
+            </ul>  
+            
+            <script src="JS/script.js"></script>
+        </div>      
+    </div>
+    
+    <img class="logo" width="300px" src="img/Shawarma Zubair logo.png" alt="logo">
+    <div class="inner-container">
+        <div class="tile1">
+            <div class="tile1-heading">Contact us</div>
+            <div class="form-row">We are here for you! How can we help?</div>
+            <form>
+                <div class="form-row">
+                    <input type="text" id="name" class="form-field" placeholder="Enter your name">
+                </div>
+                <div class="form-row">
+                    <input type="text" id="email" class="form-field" placeholder="Enter your email address">
+                </div>
+                <div class="form-row">
+                    <textarea id="message" class="form-field" placeholder="Go ahead we are listening..."></textarea>
+                </div>
+                <div class="form-row">
+                    <input type="submit" class="form-field btn" value="Submit">
+                </div>
+            </form>
+        </div>
+        
+        <div class="tile2">
+            <div class="tile2-image">
+                <img src="img/CustomerService.jpg">
+            </div>
+            <div>
+                <div class="form-row">
+                    <img src="img/loc.jpg" class="contact-image"><span><a title="map to Cafe Mahallah zubair" href="https://shorturl.at/Npp6K"  class="center"  target="_blank">Cafe Mahallah Zubair</a></span>
+                </div>
+                <div class="form-row">
+                    <img src="img/call.jpg" class="contact-image"><span>0179220179</span>
+                </div>
+                <div class="form-row">
+                    <img src="img/gmail.jpg" class="contact-image"><span><a href="mailto:someone@example.com">mfhzaki@gmail.com</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menuElement = document.getElementById("header-right-menu");
+        if (menuElement.style.display === "block") {
+            menuElement.style.display = "none";
+        } else {
+            menuElement.style.display = "block";
+        }
+    }
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+event.preventDefault(); // Prevent the form from submitting
+alert('Your message has been submitted!');
+});
+</script>
+
+</body>
+</html>

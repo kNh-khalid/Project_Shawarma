@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="CSS/project-cart.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" type="image" href="img/icon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+    <div class="topnav" id="topnav">
+        <ul>
+            <li><a href="project-home.html">Home</a></li>
+            <li><a href="project-menu.html">Menu</a></li>
+            <li><a class="active" href="project-cart.html">Cart</a></li>
+            <li><a href="project-login.html">Login</a></li>
+            <li><a href="project-contact.html">Contact us</a></li>
+            <li><a href="project-profile.html"><img src="img/profile.png" alt="profile"></a></li>
+            <div>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </ul>
+        <script src="JS/script.js"></script>  
+    </div> 
+    <img class="logo" width="300px" src="img/Shawarma Zubair logo.png" alt="logo">
+
+    <section id="cart-section">
+        <h2>My Cart</h2>
+        <div id="cart-items"></div>
+      </section>
+  
+      <template id="cart-item-template">
+        <div class="cart-item">
+          <img class="cart-item-image" src="" alt="">
+          <h3 class="cart-item-name"></h3>
+          <p class="cart-item-price"></p>
+          <input type="number" class="cart-item-quantity" min="1">
+          <p class="cart-item-total"></p>
+          <button class="cart-item-remove">Remove</button>
+        </div>
+      </template>
+
+    <div class="cart-summary">
+        <p><span id="total-amount">RM0</span></p>
+        <button id="checkout-btn" class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <form action="https://bank-payment-gateway.com/submit" method="POST">
+        <div class="modal" id="Modal">
+            <div class="modal-header">Item Detail</div>
+            <div class="modal-body">
+                <p id="totalPrice"></p>
+                <div class="payment">Choose payment method: <br><br>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cash">
+                        <span class="icon cash"></span> Pay with Cash
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="bank-muamalat">
+                        <span class="icon bank-muamalat"></span> Pay with Bank Muamalat
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="bank-islam">
+                        <span class="icon bank-islam"></span> Pay with Bank Islam
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="tng-ewallet">
+                        <span class="icon tng-ewallet"></span> Pay with TnG eWallet
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="closeModal">Close</button>
+                <button id="submit" type="button" onclick="clearCart()">Continue</button>
+            </div>
+        </div>
+    </form>
+    
+
+    <script src="JS/project-cart.js"></script>
+</body>
+</html>
