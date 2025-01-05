@@ -138,32 +138,9 @@ body{
 }
 .filter {
   margin-top: 200px;
-  margin-left: 30%;
-  width: 80%;
-}
-.filter #myInput{
+  margin-left: 25%;
   width: 50%;
-  height: 30px;
-  border-radius: 20px;
-  border: solid 0.1px gray;
-  background-color: rgb(255, 255, 255);
-  align-self:center;
-  padding: 12px;
-  opacity: 0.7;
-}
-.filter button{
-  width: 40px;
-  height: 30px;
-  background-color: #7e6100ba;
-  border: none;
-  border-radius: 5px;
-}
-.filter button:hover{
-  background-color: #bb9107ba;
-}
-button{
-  cursor: pointer;
-}
+
 @media (max-width:768px) {
   .menu-container {
     display: grid;
