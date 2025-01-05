@@ -11,7 +11,7 @@ body.dark-mode{
   background-image: linear-gradient(to top right,rgb(98, 66, 1),rgb(239, 180, 52));
 }
 .topnav{
-  background-color: #96964b;
+  background-color: orange;
   height: 70px;
   overflow:hidden;
   display: flex;
