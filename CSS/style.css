@@ -11,7 +11,7 @@ body.dark-mode{
   background-image: linear-gradient(to top right,rgb(98, 66, 1),rgb(239, 180, 52));
 }
 .topnav{
-  background-color: #f6c062;
+  background-color: #96964b;
   height: 70px;
   overflow:hidden;
   display: flex;
@@ -20,6 +20,7 @@ body.dark-mode{
   top: 0;
   left: 0;
   width: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .topnav.dark-mode {
     background-color: #966202; /* Dark mode background */
