@@ -44,6 +44,9 @@ document.getElementById('submit').addEventListener('click', function (event) {
   event.preventDefault();
   const paymentOptions = document.getElementsByName('payment');
   let selectedPayment = null;
+  const fileInput = document.getElementById("file");
+  const file = fileInput.files[0]; // Access the selected file
+  const uploadStatus = document.getElementById("upload-status");
   var option;
   for (option of paymentOptions) {
     if(option.checked) {
@@ -55,9 +58,16 @@ document.getElementById('submit').addEventListener('click', function (event) {
     alert('Please pay at the counter.');
     window.location.href = 'project-home.html';
   }
-  else if (selectedPayment == 'bank-muamalat' || selectedPayment == 'bank-islam' || selectedPayment == 'tng-ewallet') {
+  else if (selectedPayment == 'QR') {
     //
-    window.location.href = 'redirect-payment.html';   
+    if (!file){
+      event.preventDefault();
+      uploadStatus.textContent = "Please upload proof of payment";
+      uploadStatus.style.color = "red";
+    }
+    else{
+      window.location.href = 'redirect-payment.html';
+    }
   }
   else {
     alert('Please select a payment method.');
@@ -100,3 +110,109 @@ function filterMenu() {
       }
   }
 }
+document.querySelectorAll('input[name="payment"]').forEach(option => {
+  option.addEventListener('change', () => {
+      const qrCodeContainer = document.getElementById('qrCodeContainer');
+      const qrCodeImage = document.getElementById('qrCodeImage');
+      if (option.value === 'qr-code') {
+          const itemName = modalImage.alt || "Item";
+          const quantity = parseInt(quantityInput.value) || 1;
+          const amount = currentPrice * quantity;
+          const qrData = `upi://pay?pa=merchant@upi&pn=ShawarmaZubair&am=${amount}&cu=INR&tn=Payment for ${itemName}`;
+
+          // Show QR Code
+          qrCodeContainer.style.display = 'block';
+          qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrData)}&size=200x200`;
+      } else {
+          qrCodeContainer.style.display = 'none';
+      }
+  });
+});
+const qrRadio = document.getElementById("payment-qr");
+const cashRadio = document.getElementById("payment-cash");
+const qrImage = document.getElementById("qr-image");
+const uploadReceipt = document.getElementById("file-upload-form")
+
+// Add event listeners to both radio buttons
+qrRadio.addEventListener("change", function () {
+  if (qrRadio.checked) {
+      qrImage.style.display = "block"; // Show QR 
+      uploadReceipt.style.display = "flex";
+  }
+});
+
+cashRadio.addEventListener("change", function () {
+  if (cashRadio.checked) {
+      qrImage.style.display = "none"; // Hide QR code
+      uploadReceipt.style.display = "none";
+  }
+});
+
+const fileInput = document.getElementById("file");
+const uploadArea = document.getElementById("upload-area");
+const fileNameDisplay = document.getElementById("file-name");
+const filePreview = document.getElementById("file-preview");
+const uploadButton = document.getElementById("upload-button");
+const uploadStatus = document.getElementById("upload-status");
+
+fileInput.addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  handleFile(file);
+});
+
+uploadArea.addEventListener("dragover", function (event) {
+  event.preventDefault();
+  uploadArea.classList.add("dragover");
+});
+uploadArea.addEventListener("dragleave", function () {
+  uploadArea.classList.remove("dragover");
+});
+uploadArea.addEventListener("drop", function (event) {
+  event.preventDefault();
+  uploadArea.classList.remove("dragover");
+
+  const file = event.dataTransfer.files[0];
+  fileInput.files = event.dataTransfer.files; // Update the input
+  handleFile(file);
+});
+
+// Handle file processing
+function handleFile(file) {
+  if (file) {
+    fileNameDisplay.textContent = `Selected File: ${file.name}`;
+
+    if (file.type.startsWith("image/")) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        filePreview.src = e.target.result;
+        filePreview.style.display = "block";
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      filePreview.style.display = "none";
+    }
+  } else {
+    fileNameDisplay.textContent = "No file selected";
+    filePreview.style.display = "none";
+  }
+}
+// Upload button functionality
+uploadButton.addEventListener("click", function () {
+  const file = fileInput.files[0];
+
+  if (!file) {
+    uploadStatus.textContent = "No file selected. Please select a file before uploading.";
+    uploadStatus.style.color = "red";
+    return;
+  }
+  uploadStatus.textContent = "Uploading...";
+  uploadStatus.style.color = "blue";
+
+  setTimeout(() => {
+    uploadStatus.textContent = `File "${file.name}" uploaded successfully!`;
+    uploadStatus.style.color = "green";
+  }, 2000);
+});
+
