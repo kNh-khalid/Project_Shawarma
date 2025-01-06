@@ -140,7 +140,7 @@ body{
   margin-top: 200px;
   margin-left: 25%;
   width: 50%;
-
+}
 @media (max-width:768px) {
   .menu-container {
     display: grid;
@@ -151,10 +151,10 @@ body{
 @media (max-width: 660px) {
   .menu-container {
     display: block;
-}
-.filter{
-  margin-top: 350px;
-}
+  }
+  .filter{
+    margin-top: 350px;
+  }
 }
 .file-upload-form {
   width: fit-content;
