@@ -144,11 +144,11 @@ body{
 .filter #myInput{
   width: 50%;
   height: 30px;
-  border-radius: 20px;
+  border-radius: 10px ;
   border: solid 0.1px gray;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   align-self:center;
-  padding: 12px 40px;
+  padding: 10px 40px;
   opacity: 0.7;
 }
 .filter .icon {
@@ -156,8 +156,8 @@ body{
   left: 35px; 
   top: 50%; 
   width: 16px;
-  height: 16px; /* Height of the icon */
-  color: #0b0808; /* Icon color */
+  height: 16px; 
+  color: black;  
 }
 @media (max-width:768px) {
   .menu-container {
