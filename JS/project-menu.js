@@ -75,19 +75,16 @@ document.getElementById('submit').addEventListener('click', function (event) {
 });
 function addToCart(name, price, image) {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-  // Check if the item is already in the cart
+   // Check if the item is already in the cart
   const existingItem = cart.find(item => item.name === name);
   if (existingItem) {
-    existingItem.quantity += 1; // Increment the quantity if the item already exists
+    existingItem.quantity += 1; //if the item is there already just add 1
   } else {
-    // Add a new item with quantity 1
+    
     cart.push({ name, price, image, quantity: 1 });
   }
-
-  // Save the updated cart to localStorage
+  // Save
   localStorage.setItem('cart', JSON.stringify(cart));
-
   alert(`${name} has been added to the cart!`);
 }
 
