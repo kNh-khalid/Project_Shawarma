@@ -138,8 +138,26 @@ body{
 }
 .filter {
   margin-top: 200px;
-  margin-left: 25%;
+  margin-left: 30%;
+  width: 80%;
+}
+.filter #myInput{
   width: 50%;
+  height: 30px;
+  border-radius: 20px;
+  border: solid 0.1px gray;
+  background-color: rgb(255, 255, 255);
+  align-self:center;
+  padding: 12px 40px;
+  opacity: 0.7;
+}
+.filter .icon {
+  position: relative; 
+  left: 35px; 
+  top: 50%; 
+  width: 16px;
+  height: 16px; /* Height of the icon */
+  color: #0b0808; /* Icon color */
 }
 @media (max-width:768px) {
   .menu-container {
