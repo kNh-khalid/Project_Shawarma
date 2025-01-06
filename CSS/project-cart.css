@@ -113,6 +113,9 @@ body.dark-mode {
         display: inline-block;
         text-align: center;
     }
+    body{
+    overflow-x: hidden;
+    }
 }
 .modal {
     display: none; /* Hidden by default */
