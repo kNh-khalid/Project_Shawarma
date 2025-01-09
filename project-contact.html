@@ -34,25 +34,28 @@
     </div>
     
     <img class="logo" width="300px" src="img/Shawarma Zubair logo.png" alt="logo">
-    <div class="inner-container">
-        <div class="tile1">
-            <div class="tile1-heading">Contact us</div>
-            <div class="form-row">We are here for you! How can we help?</div>
-            <form>
-                <div class="form-row">
-                    <input type="text" id="name" class="form-field" placeholder="Enter your name">
-                </div>
-                <div class="form-row">
-                    <input type="text" id="email" class="form-field" placeholder="Enter your email address">
-                </div>
-                <div class="form-row">
-                    <textarea id="message" class="form-field" placeholder="Go ahead we are listening..."></textarea>
-                </div>
-                <div class="form-row">
-                    <input type="submit" class="form-field btn" value="Submit">
-                </div>
-            </form>
-        </div>
+ <div class="inner-container">
+			<div class="tile1">
+				<div class="tile1-heading">Contact us</div>
+				<div class="form-row">We are here for you! How can we help?</div>
+				<form id="contactForm">
+					<div class="form-row">
+						<input type="text" id="name" class="form-field" placeholder="Enter your name">
+						<div id="nameError" class="error"></div>
+					</div>
+					<div class="form-row">
+						<input type="text" id="email" class="form-field" placeholder="Enter your email address">
+						<div id="emailError" class="error"></div>
+					</div>
+					<div class="form-row">
+						<textarea id="message" class="form-field" placeholder="Go ahead we are listening..."></textarea>
+						<div id="messageError" class="error"></div>
+					</div>
+					<div class="form-row">
+						<input type="submit" class="form-field btn" value="Submit">
+					</div>
+				</form>
+			</div>
         
         <div class="tile2">
             <div class="tile2-image">
@@ -75,10 +78,48 @@
   <script src="/JS/project-contact.js"></script>
    
     <script>    
-document.querySelector('form').addEventListener('submit', function(event) {
-event.preventDefault(); // Prevent the form from submitting
-alert('Your message has been submitted!');
-});
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission to allow validation
+        
+        // Reset error messages
+        document.getElementById('nameError').innerHTML = '';
+        document.getElementById('emailError').innerHTML = '';
+        document.getElementById('messageError').innerHTML = '';
+
+        let isValid = true;
+
+        // Name validation
+        const name = document.getElementById('name').value;
+        if (name.trim() === '') {
+            document.getElementById('nameError').innerHTML = 'Name is required.';
+            isValid = false;
+        }
+
+        // Email validation
+        const email = document.getElementById('email').value;
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (email.trim() === '') {
+            document.getElementById('emailError').innerHTML = 'Email is required.';
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            document.getElementById('emailError').innerHTML = 'Please enter a valid email address.';
+            isValid = false;
+        }
+
+        // Message validation
+        const message = document.getElementById('message').value;
+        if (message.trim() === '') {
+            document.getElementById('messageError').innerHTML = 'Message is required.';
+            isValid = false;
+        }
+
+        // If the form is valid, submit it (you can handle form submission logic here)
+        if (isValid) {
+            alert('Form submitted successfully!');
+            // You can add your form submission logic here, e.g., send data to a server.
+        }
+    });
     </script>
 
    
